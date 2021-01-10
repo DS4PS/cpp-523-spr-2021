@@ -3,29 +3,29 @@ layout: default
 title: Schedule
 
 canvas: 
-  assignment_url: 'https://canvas.asu.edu/courses/67637/assignments'
+  assignment_url: 'https://canvas.asu.edu/courses/76016/assignments'
 
 labs:
-  lab-01:  'Saturday, August 29th' 
-  lab-02:  'Saturday, September 5th'
-  lab-03:  'Saturday, September 12th'
-  lab-04:  'Saturday, September 19th'
-  lab-05:  'Saturday, September 26th'
-  lab-06:  'Saturday, October 3rd'
+  lab-01:  'Saturday, January 16th' 
+  lab-02:  'Saturday, January 23rd'
+  lab-03:  'Saturday, January 30th'
+  lab-04:  'Saturday, February 6th'
+  lab-05:  'Saturday, February 13th'
+  lab-06:  'Saturday, February 20th'
   
 assessments:
-  mini-assessment-01:  'Sat Aug 29 - Tues Sept 01'
-  mini-assessment-02:  'Sat Sept 05 - Tues Sept 08'
-  mini-assessment-03:  'Sat Sept 12 - Tues Sept 15'
-  mini-assessment-04:  'Sat Sept 19 - Tues Sept 22'
-  mini-assessment-05:  'Sat Sept 26 - Tues Sept 29'
-  mini-assessment-06:  'Thurs Oct 01 - Tues Oct 06'
+  mini-assessment-01:  'Sat Jan 16 - Wed Jan 20'
+  mini-assessment-02:  'Sat Jan 23 - Tues Jan 26'
+  mini-assessment-03:  'Sat Jan 30- Tues Feb 2'
+  mini-assessment-04:  'Sat Feb 6 - Tues Feb 9'
+  mini-assessment-05:  'Sat Feb 13 - Tues Feb 16'
+  mini-assessment-06:  'Sat Feb 20 - Tues Feb 23'
   
 final: 
-  exam-date:  'Sat Oct 3rd - Fri Oct 9th' 
+  exam-date:  'Mon Feb 22 - Sun Feb 28' 
 
 pdf-root-url:
-  "https://github.com/DS4PS/cpp-523-fall-2020"
+  "https://github.com/DS4PS/cpp-523-spr-2021"
 ---
 
 <!--- 

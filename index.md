@@ -14,13 +14,13 @@ info:
  course_number: CPP 523 
  course_level: Graduate 
  course_website: 'https://canvas.asu.edu/courses/54984/'
- course_start_end_dates: Aug 20th to Oct 9th, 2020 
+ course_start_end_dates: Jan 11th - Feb 28th, 2020 
  course_prerequisites: College Level Intro. to Stats 
  class_meets_when:  Asynchronous  
  class_meets_where:  'https://asu.zoom.us/j/293038379'
  review_sessions_when: TBD 
  review_sessions_where: 
- discussion_board_url: 'https://ds4ps.org/cpp-523-fall-2020/help/'
+ discussion_board_url: 'https://ds4ps.org/cpp-523-spr-2021/help/'
 
 instructor:
 -  name: David Schlinkert
@@ -41,7 +41,7 @@ textbooks:
 - title: 'Applied Regression: An Introduction'
   authors: 'Lewis-Beck, C., & Lewis-Beck, M.'
   edition: 2015
-  link: '/cpp-523-fall-2020/pubs/Applied%20Regression%20Lewis-Beck.pdf'
+  link: '/cpp-523-spr-2021/pubs/Applied%20Regression%20Lewis-Beck.pdf'
   required: Required (follow link)
 - title: 'Impact Evaluation in Practice'
   authors: 'Gertler, P. J., Martinez, S., Premand, P., Rawlings, L. B., & Vermeersch, C. M. J.'
@@ -271,7 +271,7 @@ Please note: the course instructor may from time to time adjust assigned reading
 * Unit 6 - Specification
 * Review for Final Exam
 
-Visit the [schedule page](/cpp-523-fall-2020/schedule/) for details. 
+Visit the [schedule page](/schedule/) for details. 
 
 <br>
 <br>

@@ -236,8 +236,7 @@ summary( model.01 )
 
 -----
 
-<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/raw/master/labs/Lab-01-Regression-Review.docx">Lab-01 Instructions</a>
-
+<a class="uk-button uk-button-default" href="{{page.pdf-root-url}}/raw/main/labs/Lab-01-Regression-Review.docx">Lab-01 Instructions</a>
 
 
 -----

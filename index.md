@@ -17,7 +17,7 @@ info:
  course_start_end_dates: Jan 11th - Feb 28th, 2020 
  course_prerequisites: College Level Intro. to Stats 
  class_meets_when:  Asynchronous  
- class_meets_where:  'https://asu.zoom.us/j/293038379'
+ class_meets_where:  'https://asu.zoom.us/j/84019158609'
  review_sessions_when: TBD 
  review_sessions_where: 
  discussion_board_url: 'https://ds4ps.org/cpp-523-spr-2021/help/'

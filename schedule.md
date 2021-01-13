@@ -389,8 +389,8 @@ This lab introduces a case study on education policy that we will be using for t
 
 You will need the formula for confidence intervals, and the concept of visual hypothesis-testing with coefficient plots. 
 
-* [Confidence Intervals]({{page.pdf-root-url}}/raw/master/lectures/p-04-confidence-intervals.pdf)
-* [Effect Size (+hypothesis tests)]({{page.pdf-root-url}}/raw/master/lectures/p-05-program-impact.pdf)
+* [Confidence Intervals]({{page.pdf-root-url}}/raw/main/lectures/p-04-confidence-intervals.pdf)
+* [Effect Size (+hypothesis tests)]({{page.pdf-root-url}}/raw/main/lectures/p-05-program-impact.pdf)
 
 
 When you are complete:

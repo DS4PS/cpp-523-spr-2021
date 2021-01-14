@@ -294,7 +294,7 @@ And submit via Canvas.
 
 <hr>
 
-<a class="uk-button uk-button-default" href="https://canvas.asu.edu/courses/67637/quizzes/448377">Start the Mini-Assessment</a>
+<a class="uk-button uk-button-default" href="{{page.canvas.assignment_url}}">Start the Mini-Assessment</a>
 
 <hr> 
 
@@ -409,7 +409,7 @@ This mini-assessment tests your understanding of the interpretation of [statisti
 
 ![](assets/img/ci-and-significance.png)
 
-<a class="uk-button uk-button-primary" href="https://canvas.asu.edu/courses/54984/quizzes/360059">Start the Mini-Assessment</a>
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Start the Mini-Assessment</a>
 
 <br>
 
@@ -531,7 +531,7 @@ These differences are summarized on some of the review notes for the final exam:
 
 <br>
 
-<a class="uk-button uk-button-primary" href="https://canvas.asu.edu/courses/54984/quizzes/360063">Start the Mini-Assessment</a>
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Start the Mini-Assessment</a>
 
 
 <br><br>
@@ -720,7 +720,7 @@ Y = b0 + b1 X1 + e  # omit variables
 We are interested in how these operations impact (1) **the slope** of our policy variable and (2) **the standard errors** (i.e. confidence intervals) of our policy variable. Statistical significance is determined by the combination of slope and SE. 
 
 
-<a class="uk-button uk-button-primary" href="https://canvas.asu.edu/courses/54984/quizzes">Start the Mini-Assessment</a>
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Start the Mini-Assessment</a>
 
 
 
@@ -818,7 +818,7 @@ y = b0 + b1(female) + e
 y = b0 + b1(X) + b2(female) + b3(female•X) + e
 ```
 
-<a class="uk-button uk-button-primary" href="https://canvas.asu.edu/courses/41574/quizzes/306569">Start the Mini-Assessment</a>
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Start the Mini-Assessment</a>
 
 <br><br>
 <hr>

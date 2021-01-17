@@ -365,13 +365,13 @@ If we create 95% confidence intervals around these guesses, we can see that appr
 
 Please review the following lecture notes:
 
-* [Variance and Covariance]({{page.pdf-root-url}}/raw/master/lectures/p-01-variance-covariance-slope.pdf)
-* [Partitioning the Variance of Y]({{page.pdf-root-url}}/raw/master/lectures/p-02-partitioning-variance.pdf)
-* [Standard Errors]({{page.pdf-root-url}}/raw/master/lectures/p-03-standard-errors.pdf)
-* [Confidence Intervals]({{page.pdf-root-url}}/raw/master/lectures/p-04-confidence-intervals.pdf)
-* [Effect Size]({{page.pdf-root-url}}/raw/master/lectures/p-05-program-impact.pdf)
+* [Variance and Covariance]({{page.pdf-root-url}}/raw/main/lectures/p-01-variance-covariance-slope.pdf)
+* [Partitioning the Variance of Y]({{page.pdf-root-url}}/raw/main/lectures/p-02-partitioning-variance.pdf)
+* [Standard Errors]({{page.pdf-root-url}}/raw/main/lectures/p-03-standard-errors.pdf)
+* [Confidence Intervals]({{page.pdf-root-url}}/raw/main/lectures/p-04-confidence-intervals.pdf)
+* [Effect Size]({{page.pdf-root-url}}/raw/main/lectures/p-05-program-impact.pdf)
 
-You might find this summary of notation helpful [**pdf**]({{page.pdf-root-url}}/raw/master/handouts/Common-Statistics-Notation.pdf)
+You might find this summary of notation helpful [**pdf**]({{page.pdf-root-url}}/raw/main/handouts/Common-Statistics-Notation.pdf)
 
 
 

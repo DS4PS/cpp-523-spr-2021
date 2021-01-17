@@ -404,7 +404,7 @@ When you are complete:
 
 **Open {{page.assessments.mini-assessment-02}}**
 
-This mini-assessment tests your understanding of the interpretation of [statistical significance using confidence intervals]({{page.pdf-root-url}}/raw/master/lectures/p-05-program-impact.pdf).
+This mini-assessment tests your understanding of the interpretation of [statistical significance using confidence intervals]({{page.pdf-root-url}}/raw/main/lectures/p-05-program-impact.pdf).
 
 
 ![](assets/img/ci-and-significance.png)
@@ -451,7 +451,7 @@ In the lecture notes X1 will always be the **policy variable**, or intervention 
 
 **Recommended Reading:** 
 
-Skim: [Multiple Regression]({{page.pdf-root-url}}/raw/master/pubs/Multiple%20Regression.pdf)
+Skim: [Multiple Regression]({{page.pdf-root-url}}/raw/main/pubs/Multiple%20Regression.pdf)
 
 Baily CH5: Section 5.1-Multivariate OLS
 
@@ -465,7 +465,7 @@ Bailey, M. A. (2016). Real Stats: Using Econometrics for Political Science and P
 
 ## Lecture 
 
-[Lecture 06 on Control Variables]({{page.pdf-root-url}}0/raw/master/lectures/p-06-control-variables.pdf)
+[Lecture 06 on Control Variables]({{page.pdf-root-url}}/raw/main/lectures/p-06-control-variables.pdf)
 
 <br>
 
@@ -475,7 +475,7 @@ Nice explanation of the importance of control variables as competing hypotheses:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pcObydOsMXc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Tufte, E. R. (1974). *Data analysis for politics and policy.* Prentice Hall. [CH4 Multiple Regression](https://github.com/DS4PS/cpp-523-spr-2020/raw/master/pubs/Multiple%20Regression.pdf)
+Tufte, E. R. (1974). *Data analysis for politics and policy.* Prentice Hall. [CH4 Multiple Regression]({{page.pdf-root-url}}/raw/main/pubs/Multiple%20Regression.pdf)
 
 <br>
 
@@ -502,7 +502,7 @@ Tufte, E. R. (1974). *Data analysis for politics and policy.* Prentice Hall. [CH
 
 This lab introduces the important role of control variables in our models. They can be used to reduce standard errors of the model and thus increase model efficiency, or they can be used to to adjust slopes in the model. The lab draws on material from the lecture 06 notes. 
 
-* [Control Variables]({{page.pdf-root-url}}/raw/master/lectures/p-06-control-variables.pdf)
+* [Control Variables]({{page.pdf-root-url}}/raw/main/lectures/p-06-control-variables.pdf)
 
 I have provided the code for the regression models and scatterplots. This lab focuses on interpretation of results. You do need to create an RMD document, and knit an HTML file to submit your results. 
 
@@ -523,11 +523,11 @@ This mini-assessment tests your understanding of the differences between the two
 
 ![](assets/img/two-types-of-controls.png)
 
-[Control Variables]({{page.pdf-root-url}}/raw/master/lectures/p-06-control-variables.pdf)
+[Control Variables]({{page.pdf-root-url}}/raw/main/lectures/p-06-control-variables.pdf)
 
 These differences are summarized on some of the review notes for the final exam: 
 
-[Taxonomy of Control Variables]({{page.pdf-root-url}}/raw/master/lectures/taxonomy-of-control-variables.pdf) 
+[Taxonomy of Control Variables]({{page.pdf-root-url}}/raw/main/lectures/taxonomy-of-control-variables.pdf) 
 
 <br>
 
@@ -583,9 +583,9 @@ The study in the article was commissioned because of anedcotal evidence of a str
 
 ## Lecture
 
-Lecture Notes: **Omitted Variable Bias** [ [pdf]({{page.pdf-root-url}}/raw/master/lectures/p-07-omitted-variable-bias.pdf) ]  [ [example](https://ds4ps.org/cpp-523-spr-2020/lectures/walk-through/omitted-variable-bias-example.html) ]
+Lecture Notes: **Omitted Variable Bias** [ [pdf]({{page.pdf-root-url}}/raw/main/lectures/p-07-omitted-variable-bias.pdf) ]  [ [example](https://ds4ps.org/cpp-523-spr-2020/lectures/walk-through/omitted-variable-bias-example.html) ]
 
-Lecure Notes: **A Taxonomy of Control Variables** [ [pdf]({{page.pdf-root-url}}/raw/master/lectures/taxonomy-of-control-variables.pdf) ]  
+Lecure Notes: **A Taxonomy of Control Variables** [ [pdf]({{page.pdf-root-url}}/raw/main/lectures/taxonomy-of-control-variables.pdf) ]  
 
 <br>
 
@@ -608,7 +608,7 @@ Lecure Notes: **A Taxonomy of Control Variables** [ [pdf]({{page.pdf-root-url}}/
 
 This lab examines the impact of omitted variable bias on our inferences. 
 
-[Omitted Variable Bias]({{page.pdf-root-url}}/raw/master/lectures/p-07-omitted-variable-bias.pdf) 
+[Omitted Variable Bias]({{page.pdf-root-url}}/raw/main/lectures/p-07-omitted-variable-bias.pdf) 
 
 [Example of How to Calculate Bias](../lectures/walk-through/omitted-variable-bias-example.html)  [ [PDF](https://www.dropbox.com/s/10bl6z9rhbirp1t/omitted-variable-bias-example.pdf?dl=1) ]
 
@@ -765,14 +765,14 @@ Once you have completed this section you will be able to run and interpret regre
 
 [Hypothesis-Testing With Groups Part-01](https://ds4ps.org/cpp-523-spr-2020/lectures/dummy-variables.html) 
 
-[Hypothesis-Testing With Groups Part-02]({{page.pdf-root-url}}/raw/master/lectures/hypotheses-tests-with-dummy-variables.pdf) 
+[Hypothesis-Testing With Groups Part-02]({{page.pdf-root-url}}/raw/main/lectures/hypotheses-tests-with-dummy-variables.pdf) 
 
 
 **Lab Preview** 
 
-[Practice Questions]({{page.pdf-root-url}}/raw/master/handouts/Regression%20with%20Interaction%20Effects.pdf)
+[Practice Questions]({{page.pdf-root-url}}/raw/main/handouts/Regression%20with%20Interaction%20Effects.pdf)
 
-[SOLUTIONS]({{page.pdf-root-url}}/raw/master/handouts/Regression-with-Interaction-Effects-SOLUTIONS.pdf)
+[SOLUTIONS]({{page.pdf-root-url}}/raw/main/handouts/Regression-with-Interaction-Effects-SOLUTIONS.pdf)
 
 <br>
 <br>
@@ -919,7 +919,7 @@ As a result, the model that minimizes squared error terms will be disproportiona
 
 When they occur in the extremes of X they bias the slope. When they occur near the mean of X they bias the intercept, and in doing so also increase standard errors. 
 
-![](https://raw.githubusercontent.com/DS4PS/cpp-523-sum-2020/master/assets/img/outlier-impact.png)
+![](https://raw.githubusercontent.com/DS4PS/cpp-523-sum-2020/main/assets/img/outlier-impact.png)
 
 **Learning Objectives**
 
@@ -938,7 +938,7 @@ Once you have completed this section you will be able to:
 ## Lecture
 
 Specification Bias I [ [html](https://ds4ps.org/cpp-523-spr-2020/lectures/specification-bias.html) ]  
-Specification Bias II [ [pdf](https://github.com/DS4PS/cpp-523-spr-2020/raw/master/lectures/p-09-specification.pdf) ]  
+Specification Bias II [ [pdf](https://github.com/DS4PS/cpp-523-spr-2020/raw/main/lectures/p-09-specification.pdf) ]  
 
 For this lab you will run and interpret a quadratic regression and a logged regression model. 
 
@@ -967,11 +967,11 @@ When you are complete:
 
 -----
 
-This mini assessment covers material from the [Taxonomy of Controls](https://github.com/DS4PS/cpp-523-spr-2020/raw/master/lectures/taxonomy-of-control-variables.pdf).
+This mini assessment covers material from the [Taxonomy of Controls](https://github.com/DS4PS/cpp-523-spr-2020/raw/main/lectures/taxonomy-of-control-variables.pdf).
 
 And on Measurement Error. See the animated simulations below for examples of the effects of measurement error in the DV versus IVs. And see questions 3 and 4 on the review sheet for the same examples explained as Venn diagrams. 
 
-[Review Questions]({{page.pdf-root-url}}/raw/master/handouts/Review%20Material%20for%20the%20Final%20Exam%20-%20SOLUTIONS.pdf)  
+[Review Questions]({{page.pdf-root-url}}/raw/main/handouts/Review%20Material%20for%20the%20Final%20Exam%20-%20SOLUTIONS.pdf)  
 
 This mini assessment should give you an idea of the types of questions you might expect on the final exam. 
 
@@ -992,11 +992,11 @@ This mini assessment should give you an idea of the types of questions you might
 *Attenuation of the slope (tilts toward zero), but also a decrease in standard errors that offset the shift of the slope toward zero.*
 
 
-![](https://github.com/lecy/regression-simulations/raw/master/GIFS/measurement%20error%20iv.gif) 
+![](https://github.com/lecy/regression-simulations/raw/main/GIFS/measurement%20error%20iv.gif) 
 
 <br>
 
-![](https://github.com/lecy/regression-simulations/raw/master/GIFS/measurement%20error%20iv%202.gif) 
+![](https://github.com/lecy/regression-simulations/raw/main/GIFS/measurement%20error%20iv%202.gif) 
 
 <br><br>
 <hr>
@@ -1013,22 +1013,22 @@ Please post questions on the discussion board if you are not sure of the correct
 
 ## Practice Exams
 
-[Exam Review with Solutions]({{page.pdf-root-url}}/raw/master/handouts/Review%20Material%20for%20the%20Final%20Exam%20-%20SOLUTIONS.pdf) 
+[Exam Review with Solutions]({{page.pdf-root-url}}/raw/main/handouts/Review%20Material%20for%20the%20Final%20Exam%20-%20SOLUTIONS.pdf) 
 
-[Practice Exam]({{page.pdf-root-url}}/raw/master/handouts/Practice%20Exam.pdf)  
+[Practice Exam]({{page.pdf-root-url}}/raw/main/handouts/Practice%20Exam.pdf)  
 
 <br>
 
 ## Useful Summaries or Examples
 
-[Taxonomy of Control Variables]({{page.pdf-root-url}}/raw/master/lectures/taxonomy-of-control-variables.pdf)  
+[Taxonomy of Control Variables]({{page.pdf-root-url}}/raw/main/lectures/taxonomy-of-control-variables.pdf)  
 
-[Indirect Effects Example]({{page.pdf-root-url}}/raw/master/handouts/indirect-effect-example.pdf)  
+[Indirect Effects Example]({{page.pdf-root-url}}/raw/main/handouts/indirect-effect-example.pdf)  
 
 
 **The Seven Deadly Sins of Regression**
 
-Concise summary of the seven most common issues that will corrupt your regression inferences [ [pdf]({{page.pdf-root-url}}/raw/master/handouts/Seven-Sins-of-Regression-Analysis.pdf) ]  
+Concise summary of the seven most common issues that will corrupt your regression inferences [ [pdf]({{page.pdf-root-url}}/raw/main/handouts/Seven-Sins-of-Regression-Analysis.pdf) ]  
 
 * Selection 
 * Omitted variable bias 
@@ -1038,7 +1038,7 @@ Concise summary of the seven most common issues that will corrupt your regressio
 * Multi-collinearity 
 * Simultenaeity 
 
-Some longer notes: Seven Sins of Regression [ [pdf]({{page.pdf-root-url}}/raw/master/lectures/p-10-seven-sins-of-regression.pdf) ] 
+Some longer notes: Seven Sins of Regression [ [pdf]({{page.pdf-root-url}}/raw/main/lectures/p-10-seven-sins-of-regression.pdf) ] 
 
 <br>
 
@@ -1057,11 +1057,11 @@ Measurement Error in the IV:
 *Attenuation of the slope (tilts toward zero), but also a decrease in standard errors that offset the shift of the slope toward zero.*
 
 
-![](https://github.com/lecy/regression-simulations/raw/master/GIFS/measurement%20error%20iv.gif) 
+![](https://github.com/lecy/regression-simulations/raw/main/GIFS/measurement%20error%20iv.gif) 
 
 <br>
 
-![](https://github.com/lecy/regression-simulations/raw/master/GIFS/measurement%20error%20iv%202.gif) 
+![](https://github.com/lecy/regression-simulations/raw/main/GIFS/measurement%20error%20iv%202.gif) 
 
 <br><br>
 <hr>

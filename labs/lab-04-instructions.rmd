@@ -124,7 +124,7 @@ This exercise is much like the exercise that we did in class looking at predicti
 
 
 
-### Question 1.
+## Question 1.
 
 How important is network diversity (ND) to our well-being? 
 
@@ -209,11 +209,16 @@ In this model Network Diversity also loses significance. Explain why.
 
 <br>
 
-### Question 2.
+
+
+## Question 2.
 
 How does our need for approval of others (contingent self-esteem) impact our happiness (SWB)? 
 
 What happens to our inferences if we estimate the impact of CSE on happiness without accounting for baseline self-esteem (RSE)?
+
+* **Rosemberg Self Esteem Scale (RSE)** - one of many measures of self-esteem, a favorite variable in psychology. [reference](http://www.wwnorton.com/college/psych/psychsci/media/rosenberg.htm  ) 
+* **Contingent Self Esteem (CSE)** -  "is based on the approval of others or on social comparisons. The success or failure of any situation can result in fluctuations of an individual's self-esteem. A manifestation of someone with contingent self-esteem is excessive self-consciousness...extreme criticism of one's self, concern of how they are perceived by their peers, and feelings of discomfort in social settings." [reference](https://en.wikipedia.org/wiki/Contingent_self-esteem)
 
 To examine this we will regress SWB onto RSE, SWB onto CSE. 
 
@@ -262,11 +267,11 @@ This is an odd case, though, because we are "confident" about our slope on Model
 
 **Part 2:** 
 
-In Quesion 1 the control variable cased the slope estimate for Network Diversity to shift to the left toward the null hypothesis (slope=0, no impact) and as a result it lost statistical significance. 
+In Question 1 above the control variable caused the slope estimate for Network Diversity (ND) to shift to the left toward the null hypothesis (slope=0, no impact) and as a result it lost statistical significance. 
 
 What happens in this case? Why did that happen? Drawing the coefficient plot might help. 
 
-**Should high statistical significance give you confidence a model if bias is present?**  
+**Should high statistical significance give you confidence in a model if bias is present?**  
 
 
 

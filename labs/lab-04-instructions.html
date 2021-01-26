@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -20,13 +20,14 @@
 <script src="lab-04-instructions_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="lab-04-instructions_files/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="lab-04-instructions_files/navigation-1.1/tabsets.js"></script>
+<script src="lab-04-instructions_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -36,14 +37,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -52,9 +55,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { background-color: #f8f8f8; }
+  {  background-color: #f8f8f8; }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -99,7 +102,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -143,9 +146,7 @@ h6 {
 
 <link rel="stylesheet" href="textbook.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -159,7 +160,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -176,8 +176,6 @@ summary {
 </style>
 
 
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -223,6 +221,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -235,20 +234,17 @@ summary {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -303,12 +299,12 @@ $(document).ready(function () {
 </div>
 <div id="setup" class="section level2">
 <h2>Setup</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>( dplyr )       <span class="co"># data wrangling</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>( stargazer )   <span class="co"># nice regression tables</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>( pander )      <span class="co"># formatting tables</span></a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">URL &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/DS4PS/cpp-523-fall-2019/master/labs/data/predicting-subjective-wellbeing.csv&quot;</span></a>
-<a class="sourceLine" id="cb2-2" title="2">dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>( URL, <span class="dt">stringsAsFactors=</span>F )</a></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">head</span>( dat ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>( dplyr )       <span class="co"># data wrangling</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>( stargazer )   <span class="co"># nice regression tables</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">library</span>( pander )      <span class="co"># formatting tables</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>URL &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/DS4PS/cpp-523-fall-2019/master/labs/data/predicting-subjective-wellbeing.csv&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>( URL, <span class="dt">stringsAsFactors=</span>F )</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">head</span>( dat ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</span></code></pre></div>
 <table style="width:100%;">
 <colgroup>
 <col width="6%" />
@@ -421,20 +417,20 @@ $(document).ready(function () {
 <p><br></p>
 <hr />
 <p><br></p>
-<div id="question-1." class="section level3">
-<h3>Question 1.</h3>
+<div id="question-1." class="section level2">
+<h2>Question 1.</h2>
 <p>How important is network diversity (ND) to our well-being?</p>
 <p>How does our understanding change when we control for (or fail to control for) other characteristics of our social networks?</p>
 <p><strong>Part 1:</strong></p>
 <p>Consider a three-variable regression of Subjective Well-Being (SWB), Network Diversity (ND) and Perceived Social Support (PSS):</p>
 <p><span class="math inline">\(SWB=β_0+β_1 \cdot ND+β_2 \cdot PSS+e\)</span></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">m.full &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>ND <span class="op">+</span><span class="st"> </span>PSS, <span class="dt">data=</span>dat )</a>
-<a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="kw">stargazer</span>( m.full, </a>
-<a class="sourceLine" id="cb4-4" title="4">           <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">digits=</span><span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb4-5" title="5">           <span class="dt">dep.var.caption =</span> <span class="st">&quot;DV: Subjective Well-Being&quot;</span>,</a>
-<a class="sourceLine" id="cb4-6" title="6">           <span class="dt">omit.stat =</span> <span class="kw">c</span>(<span class="st">&quot;rsq&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;ser&quot;</span>),</a>
-<a class="sourceLine" id="cb4-7" title="7">           <span class="dt">notes.label =</span> <span class="st">&quot;Standard errors in parentheses&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>m.full &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>ND <span class="op">+</span><span class="st"> </span>PSS, <span class="dt">data=</span>dat )</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">stargazer</span>( m.full, </span>
+<span id="cb4-4"><a href="#cb4-4"></a>           <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">digits=</span><span class="dv">2</span>,</span>
+<span id="cb4-5"><a href="#cb4-5"></a>           <span class="dt">dep.var.caption =</span> <span class="st">&quot;DV: Subjective Well-Being&quot;</span>,</span>
+<span id="cb4-6"><a href="#cb4-6"></a>           <span class="dt">omit.stat =</span> <span class="kw">c</span>(<span class="st">&quot;rsq&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;ser&quot;</span>),</span>
+<span id="cb4-7"><a href="#cb4-7"></a>           <span class="dt">notes.label =</span> <span class="st">&quot;Standard errors in parentheses&quot;</span>)</span></code></pre></div>
 <table style="text-align:center">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -562,17 +558,17 @@ Standard errors in parentheses
 </table>
 <p>Calculate the omitted variable bias on the Network Diversity (ND) coefficient that results from omitting the Perceived Social Support (PSS) variable from the regression.</p>
 <p><span class="math inline">\(SWB=b_0+b_1 \cdot ND+e\)</span></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">B1 &lt;-<span class="st"> </span><span class="fl">0.00</span> <span class="co"># replace 0.00 with the proper coefficient</span></a>
-<a class="sourceLine" id="cb5-2" title="2">b1 &lt;-<span class="st"> </span><span class="fl">0.00</span> <span class="co"># replace 0.00 with the proper coefficient</span></a>
-<a class="sourceLine" id="cb5-3" title="3">bias &lt;-<span class="st"> </span>b1 <span class="op">-</span><span class="st"> </span>B1</a></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">m.full &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>ND <span class="op">+</span><span class="st"> </span>PSS, <span class="dt">data=</span>dat )</a>
-<a class="sourceLine" id="cb6-2" title="2">m.naive &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>ND, <span class="dt">data=</span>dat )</a>
-<a class="sourceLine" id="cb6-3" title="3"></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="kw">stargazer</span>( m.naive, m.full, </a>
-<a class="sourceLine" id="cb6-5" title="5">           <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">digits=</span><span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb6-6" title="6">           <span class="dt">dep.var.caption =</span> <span class="st">&quot;DV: Subjective Well-Being&quot;</span>,</a>
-<a class="sourceLine" id="cb6-7" title="7">           <span class="dt">omit.stat =</span> <span class="kw">c</span>(<span class="st">&quot;rsq&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;ser&quot;</span>),</a>
-<a class="sourceLine" id="cb6-8" title="8">           <span class="dt">notes.label =</span> <span class="st">&quot;Standard errors in parentheses&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>B1 &lt;-<span class="st"> </span><span class="fl">0.00</span> <span class="co"># replace 0.00 with the proper coefficient</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>b1 &lt;-<span class="st"> </span><span class="fl">0.00</span> <span class="co"># replace 0.00 with the proper coefficient</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>bias &lt;-<span class="st"> </span>b1 <span class="op">-</span><span class="st"> </span>B1</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>m.full &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>ND <span class="op">+</span><span class="st"> </span>PSS, <span class="dt">data=</span>dat )</span>
+<span id="cb6-2"><a href="#cb6-2"></a>m.naive &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>ND, <span class="dt">data=</span>dat )</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="kw">stargazer</span>( m.naive, m.full, </span>
+<span id="cb6-5"><a href="#cb6-5"></a>           <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">digits=</span><span class="dv">2</span>,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>           <span class="dt">dep.var.caption =</span> <span class="st">&quot;DV: Subjective Well-Being&quot;</span>,</span>
+<span id="cb6-7"><a href="#cb6-7"></a>           <span class="dt">omit.stat =</span> <span class="kw">c</span>(<span class="st">&quot;rsq&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;ser&quot;</span>),</span>
+<span id="cb6-8"><a href="#cb6-8"></a>           <span class="dt">notes.label =</span> <span class="st">&quot;Standard errors in parentheses&quot;</span>)</span></code></pre></div>
 <table style="text-align:center">
 <tr>
 <td colspan="3" style="border-bottom: 1px solid black">
@@ -743,7 +739,7 @@ Standard errors in parentheses
 <p><br></p>
 <p><strong>Part 3:</strong></p>
 <p>How good is the naive estimation of β1, the impact of network diversity on our happiness, in this case?</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">b1 <span class="op">/</span><span class="st"> </span>B1  <span class="co"># rough measure of the magnitude of bias</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>b1 <span class="op">/</span><span class="st"> </span>B1  <span class="co"># rough measure of the magnitude of bias</span></span></code></pre></div>
 <p><br></p>
 <p><strong>Part 4:</strong></p>
 <p>In the previous lecture we saw how the Class Size model lost significance when SES was added as a result of an increase in the standard errors.</p>
@@ -753,24 +749,28 @@ Standard errors in parentheses
 <hr />
 <p><br></p>
 </div>
-<div id="question-2." class="section level3">
-<h3>Question 2.</h3>
+<div id="question-2." class="section level2">
+<h2>Question 2.</h2>
 <p>How does our need for approval of others (contingent self-esteem) impact our happiness (SWB)?</p>
 <p>What happens to our inferences if we estimate the impact of CSE on happiness without accounting for baseline self-esteem (RSE)?</p>
+<ul>
+<li><strong>Rosemberg Self Esteem Scale (RSE)</strong> - one of many measures of self-esteem, a favorite variable in psychology. <a href="http://www.wwnorton.com/college/psych/psychsci/media/rosenberg.htm">reference</a></li>
+<li><strong>Contingent Self Esteem (CSE)</strong> - “is based on the approval of others or on social comparisons. The success or failure of any situation can result in fluctuations of an individual’s self-esteem. A manifestation of someone with contingent self-esteem is excessive self-consciousness…extreme criticism of one’s self, concern of how they are perceived by their peers, and feelings of discomfort in social settings.” <a href="https://en.wikipedia.org/wiki/Contingent_self-esteem">reference</a></li>
+</ul>
 <p>To examine this we will regress SWB onto RSE, SWB onto CSE.</p>
 <p><span class="math inline">\(SWB=b_0 + b_1 \cdot CSE+e_1\)</span><br />
 <span class="math inline">\(SWB=b_0 + b_2 \cdot RSE+e_2\)</span></p>
 <p>We can then compare these two bivariate regressions to the results in the full model:</p>
 <p><span class="math inline">\(SWB=β_0+β_1 \cdot CSE+β_2 \cdot RSE+\epsilon\)</span></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">m<span class="fl">.01</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>CSE, <span class="dt">data=</span>dat )</a>
-<a class="sourceLine" id="cb8-2" title="2">m<span class="fl">.02</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>RSE, <span class="dt">data=</span>dat )</a>
-<a class="sourceLine" id="cb8-3" title="3">m<span class="fl">.03</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>CSE <span class="op">+</span><span class="st"> </span>RSE, <span class="dt">data=</span>dat )</a>
-<a class="sourceLine" id="cb8-4" title="4"></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="kw">stargazer</span>( m<span class="fl">.01</span>, m<span class="fl">.02</span>, m<span class="fl">.03</span>, </a>
-<a class="sourceLine" id="cb8-6" title="6">           <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">digits=</span><span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb8-7" title="7">           <span class="dt">dep.var.caption =</span> <span class="st">&quot;DV: Subjective Well-Being&quot;</span>,</a>
-<a class="sourceLine" id="cb8-8" title="8">           <span class="dt">omit.stat =</span> <span class="kw">c</span>(<span class="st">&quot;rsq&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;ser&quot;</span>),</a>
-<a class="sourceLine" id="cb8-9" title="9">           <span class="dt">notes.label =</span> <span class="st">&quot;Standard errors in parentheses&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>m<span class="fl">.01</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>CSE, <span class="dt">data=</span>dat )</span>
+<span id="cb8-2"><a href="#cb8-2"></a>m<span class="fl">.02</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>RSE, <span class="dt">data=</span>dat )</span>
+<span id="cb8-3"><a href="#cb8-3"></a>m<span class="fl">.03</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( SWB <span class="op">~</span><span class="st"> </span>CSE <span class="op">+</span><span class="st"> </span>RSE, <span class="dt">data=</span>dat )</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">stargazer</span>( m<span class="fl">.01</span>, m<span class="fl">.02</span>, m<span class="fl">.03</span>, </span>
+<span id="cb8-6"><a href="#cb8-6"></a>           <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">digits=</span><span class="dv">2</span>,</span>
+<span id="cb8-7"><a href="#cb8-7"></a>           <span class="dt">dep.var.caption =</span> <span class="st">&quot;DV: Subjective Well-Being&quot;</span>,</span>
+<span id="cb8-8"><a href="#cb8-8"></a>           <span class="dt">omit.stat =</span> <span class="kw">c</span>(<span class="st">&quot;rsq&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;ser&quot;</span>),</span>
+<span id="cb8-9"><a href="#cb8-9"></a>           <span class="dt">notes.label =</span> <span class="st">&quot;Standard errors in parentheses&quot;</span>)</span></code></pre></div>
 <table style="text-align:center">
 <tr>
 <td colspan="4" style="border-bottom: 1px solid black">
@@ -982,9 +982,9 @@ Standard errors in parentheses
 </ol>
 <p>This is an odd case, though, because we are “confident” about our slope on Model 1 (it’s highly statistically significant), and also confident in Model 3 (still highly significant). But what has changed about the slope? And how would that change our recommendations?</p>
 <p><strong>Part 2:</strong></p>
-<p>In Quesion 1 the control variable cased the slope estimate for Network Diversity to shift to the left toward the null hypothesis (slope=0, no impact) and as a result it lost statistical significance.</p>
+<p>In Question 1 above the control variable caused the slope estimate for Network Diversity (ND) to shift to the left toward the null hypothesis (slope=0, no impact) and as a result it lost statistical significance.</p>
 <p>What happens in this case? Why did that happen? Drawing the coefficient plot might help.</p>
-<p><strong>Should high statistical significance give you confidence a model if bias is present?</strong></p>
+<p><strong>Should high statistical significance give you confidence in a model if bias is present?</strong></p>
 <p><strong>Part 3:</strong></p>
 <p>Explain the direction of bias in this model using the formula for omitted variable bias: what must be true about the sign of the correlation between RSE and CSE to get these results?</p>
 <p><span class="math inline">\(bias = \alpha_1 \cdot B_2\)</span></p>
@@ -1053,6 +1053,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

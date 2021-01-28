@@ -748,7 +748,7 @@ plot( npos$POP, npos$NPOs, pch=19, cex=0.75, bty="n", col="darkorange",
       main="Level-Level Model", xlab="Metro Population", ylab="Number of Nonprofits" )
 
 plot( npos$POP, log(npos$NPOs+1), pch=19, cex=0.75, bty="n", col="darkorange",
-      main="Log-Linear Model", xlab="Metro Population", ylab="Number of Nonprofits (logged)" )
+      main="Linear-Log Model", xlab="Metro Population", ylab="Number of Nonprofits (logged)" )
 
 plot( log(npos$POP+1), npos$NPOs, pch=19, cex=0.75, bty="n", col="darkorange",
       main="Level-Level Model", xlab="Metro Population (logged)", ylab="Number of Nonprofits" )
@@ -767,7 +767,7 @@ See below for more details.
 
 # NONLINEAR RELATIONSHIPS
 
-How do we address the situation when our relationships are nonlinear? This is important in public policy and program evaluation because of the economic phenomenon of diminishing marginal returns. If we have no resources or program services then providing a little big might have a large impact on the outcome. If we already have lots of resources and access then adding a little more might not have as much of an impact.
+How do we address the situation when our relationships are nonlinear? This is important in public policy and program evaluation because of the economic phenomenon of diminishing marginal returns. If we have no resources or program services then providing a little bit might have a large impact on the outcome. If we already have lots of resources and access then adding a little more might not have as much of an impact.
 
 Let's now consider the second case in the quartet. 
 
@@ -833,7 +833,7 @@ lines( x[order(x)], quad2$fitted.values[order(x)], col = "blue")
 
 The main challenge that nonlinear models present is the interpretation of effects.
 
-Up until now we have used the slope of X to determine the impact of our program. If the slope is negative five, for exmaple, we infer that for each additional student we add to the classroom we see a drop in the average standardized test score in the classroom of five points. That doesn't matter if we have 10 students and we are adding an 11th, or if we have 40 students and we are adding a 41st (which is likely an unrealistic scenario).
+Up until now we have used the slope of X to determine the impact of our program. If the slope is negative five, for example, we infer that for each additional student we add to the classroom we see a drop in the average standardized test score in the classroom of five points. That doesn't matter if we have 10 students and we are adding an 11th, or if we have 40 students and we are adding a 41st (which is likely an unrealistic scenario).
 
 ```{r, eval=F}
 coefficients( quad2 ) %>% round(4)
@@ -1049,7 +1049,7 @@ The main challenge with growth models is that slopes vary so much
 depending upon which portion of the data we examine. As a result, the
 slopes from our traditional regression models are not as useful since we
 have to do some acrobatics to determine marginal effects, and marginal
-effects can only be interpretted over a very local range of X values.
+effects can only be interpreted over a very local range of X values.
 
 Additionally, if we observe a growth or scaling process in the DV, we
 are often more interested in the rate of growth than we are in the
@@ -1088,9 +1088,9 @@ The slopes themselves no longer represent LEVELS of the DV. They now
 represent RATES OF GROWTH.
 
 The slopes represent a specific interest rate: a continuously
-compounding rates of return. If we are not accostomed to working with
+compounding rates of return. If we are not accustomed to working with
 this concept we can easily translate a slope \\(B\_1\\) to a more
-familiar annual rate of return with the formula: \\[e\^{B\_1} - 1\\].
+familiar annual rate of return with the formula: \\[e\^{B\_1} - 1\\]
 
 ```{r}
 plot( time, log.y1, xlim=c(0,8), ylim=c(-2,6), 
@@ -2321,13 +2321,13 @@ Let's use Model 1 for the basic interpretation of the slope in a Log-Log model.
 
 If both the DV and IV have been log-transformed then the slope B1 will represent a comparison of rates of change, something that you should recognize from your economics classes as an elasticity. 
 
-In this case, instead of interpretting B1 as a unit change in Y as a response to a one-unit change in X, we interpret B1 as a percentage change in Y as a result of a one-percent change in X.
+In this case, instead of interpreting B1 as a unit change in Y as a response to a one-unit change in X, we interpret B1 as a percentage change in Y as a result of a one-percent change in X.
 
 Since B1 is 0.35 in Model 1, we would say that a ten percent increase in the size of a nonprofit will correspond with a 3.5 percent increase in pay for the director.
 
 ## Calculating Average Pay for a Given Nonprofit Size
 
-If we are interested in specific predictions from the model, the phrase "a 3.5 percent incrase in pay" is meaningless unless we can anchor the growth rate to a starting value. If we want to look at actual salaries in relationship to nonprofit size, we need to translate backwards from the logged terms back into the original units. We can do this by exponentiating our logged terms.
+If we are interested in specific predictions from the model, the phrase "a 3.5 percent increase in pay" is meaningless unless we can anchor the growth rate to a starting value. If we want to look at actual salaries in relationship to nonprofit size, we need to translate backwards from the logged terms back into the original units. We can do this by exponentiating our logged terms.
 
 For example, $e^{6.23}$ is 508, so someone running a nonprofit with zero revenue would be paid an average salary of $508 per year (note that $0 is the expected answer, and this is within the confidence interval of the estimate). 
 

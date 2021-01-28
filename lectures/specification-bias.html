@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>specification-bias.utf8.md</title>
+<title>specification-bias.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -73,9 +73,7 @@ h6 {
 
 <link rel="stylesheet" href="textbook.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -89,7 +87,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -194,8 +191,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -240,6 +235,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -252,28 +248,20 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 <style type="text/css">
 .code-folding-btn { margin-bottom: 4px; }
 </style>
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("hide" === "show");
-});
-</script>
 
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -1705,7 +1693,7 @@ plot( npos$POP, npos$NPOs, pch=19, cex=0.75, bty=&quot;n&quot;, col=&quot;darkor
       main=&quot;Level-Level Model&quot;, xlab=&quot;Metro Population&quot;, ylab=&quot;Number of Nonprofits&quot; )
 
 plot( npos$POP, log(npos$NPOs+1), pch=19, cex=0.75, bty=&quot;n&quot;, col=&quot;darkorange&quot;,
-      main=&quot;Log-Linear Model&quot;, xlab=&quot;Metro Population&quot;, ylab=&quot;Number of Nonprofits (logged)&quot; )
+      main=&quot;Linear-Log Model&quot;, xlab=&quot;Metro Population&quot;, ylab=&quot;Number of Nonprofits (logged)&quot; )
 
 plot( log(npos$POP+1), npos$NPOs, pch=19, cex=0.75, bty=&quot;n&quot;, col=&quot;darkorange&quot;,
       main=&quot;Level-Level Model&quot;, xlab=&quot;Metro Population (logged)&quot;, ylab=&quot;Number of Nonprofits&quot; )
@@ -1718,7 +1706,7 @@ plot( log(npos$POP+1), log(npos$NPOs+1), pch=19, cex=0.75, bty=&quot;n&quot;, co
 </div>
 <div id="nonlinear-relationships" class="section level1">
 <h1>NONLINEAR RELATIONSHIPS</h1>
-<p>How do we address the situation when our relationships are nonlinear? This is important in public policy and program evaluation because of the economic phenomenon of diminishing marginal returns. If we have no resources or program services then providing a little big might have a large impact on the outcome. If we already have lots of resources and access then adding a little more might not have as much of an impact.</p>
+<p>How do we address the situation when our relationships are nonlinear? This is important in public policy and program evaluation because of the economic phenomenon of diminishing marginal returns. If we have no resources or program services then providing a little bit might have a large impact on the outcome. If we already have lots of resources and access then adding a little more might not have as much of an impact.</p>
 <p>Let’s now consider the second case in the quartet.</p>
 <pre class="r"><code>plot( y2 ~ x2, data=anscombe,
      col = &quot;red&quot;, pch = 21, bg = &quot;orange&quot;, cex = 3, 
@@ -2006,7 +1994,7 @@ lines( x[order(x)], quad2$fitted.values[order(x)], col = &quot;blue&quot;)</code
 <div id="interpretation-of-program-effects" class="section level2">
 <h2>Interpretation of Program Effects</h2>
 <p>The main challenge that nonlinear models present is the interpretation of effects.</p>
-<p>Up until now we have used the slope of X to determine the impact of our program. If the slope is negative five, for exmaple, we infer that for each additional student we add to the classroom we see a drop in the average standardized test score in the classroom of five points. That doesn’t matter if we have 10 students and we are adding an 11th, or if we have 40 students and we are adding a 41st (which is likely an unrealistic scenario).</p>
+<p>Up until now we have used the slope of X to determine the impact of our program. If the slope is negative five, for example, we infer that for each additional student we add to the classroom we see a drop in the average standardized test score in the classroom of five points. That doesn’t matter if we have 10 students and we are adding an 11th, or if we have 40 students and we are adding a 41st (which is likely an unrealistic scenario).</p>
 <pre class="r"><code>coefficients( quad2 ) %&gt;% round(4)</code></pre>
 <p>In the nonlinear case, however, the marginal impact of an additional student will be different depending upon the initial class size. Consider Anscombe’s second case above.</p>
 <p><span class="math inline">\(Y = b_{0} + b_{1}X1 + b_{2}X1^2\)</span></p>
@@ -2436,7 +2424,7 @@ R<sup>2</sup>
 depending upon which portion of the data we examine. As a result, the
 slopes from our traditional regression models are not as useful since we
 have to do some acrobatics to determine marginal effects, and marginal
-effects can only be interpretted over a very local range of X values.</p>
+effects can only be interpreted over a very local range of X values.</p>
 <p>Additionally, if we observe a growth or scaling process in the DV, we
 are often more interested in the rate of growth than we are in the
 actual values of the DV at different levels of X.</p>
@@ -2660,9 +2648,9 @@ intercept is at time=0) it will return our original $10 investment.</p>
 <p>The slopes themselves no longer represent LEVELS of the DV. They now
 represent RATES OF GROWTH.</p>
 <p>The slopes represent a specific interest rate: a continuously
-compounding rates of return. If we are not accostomed to working with
+compounding rates of return. If we are not accustomed to working with
 this concept we can easily translate a slope \(B_1\) to a more
-familiar annual rate of return with the formula: \[e^{B_1} - 1\].</p>
+familiar annual rate of return with the formula: \[e^{B_1} - 1\]</p>
 <pre class="r"><code>plot( time, log.y1, xlim=c(0,8), ylim=c(-2,6), 
       ylab=&quot;Net Worth (Logged)&quot;, xlab=&quot;Time&quot;, type=&quot;b&quot;, bty=&quot;n&quot;, pch=19,
       main=&quot;Rate of Investment Return&quot;)
@@ -3016,12 +3004,12 @@ R<sup>2</sup>
 <h2>Interpretting Results</h2>
 <p>Let’s use Model 1 for the basic interpretation of the slope in a Log-Log model.</p>
 <p>If both the DV and IV have been log-transformed then the slope B1 will represent a comparison of rates of change, something that you should recognize from your economics classes as an elasticity.</p>
-<p>In this case, instead of interpretting B1 as a unit change in Y as a response to a one-unit change in X, we interpret B1 as a percentage change in Y as a result of a one-percent change in X.</p>
+<p>In this case, instead of interpreting B1 as a unit change in Y as a response to a one-unit change in X, we interpret B1 as a percentage change in Y as a result of a one-percent change in X.</p>
 <p>Since B1 is 0.35 in Model 1, we would say that a ten percent increase in the size of a nonprofit will correspond with a 3.5 percent increase in pay for the director.</p>
 </div>
 <div id="calculating-average-pay-for-a-given-nonprofit-size" class="section level2">
 <h2>Calculating Average Pay for a Given Nonprofit Size</h2>
-<p>If we are interested in specific predictions from the model, the phrase “a 3.5 percent incrase in pay” is meaningless unless we can anchor the growth rate to a starting value. If we want to look at actual salaries in relationship to nonprofit size, we need to translate backwards from the logged terms back into the original units. We can do this by exponentiating our logged terms.</p>
+<p>If we are interested in specific predictions from the model, the phrase “a 3.5 percent increase in pay” is meaningless unless we can anchor the growth rate to a starting value. If we want to look at actual salaries in relationship to nonprofit size, we need to translate backwards from the logged terms back into the original units. We can do this by exponentiating our logged terms.</p>
 <p>For example, <span class="math inline">\(e^{6.23}\)</span> is 508, so someone running a nonprofit with zero revenue would be paid an average salary of $508 per year (note that $0 is the expected answer, and this is within the confidence interval of the estimate).</p>
 <p>What about the director of a nonprofit that generates $5 million in revenue each year? Typically we would plug the value into the regression formula to determine the predicted value of Y at that level of X:</p>
 <p><span class="math display">\[B_{0} + B_{1} * 5,000,000 =  ?\]</span></p>
@@ -3076,6 +3064,28 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -937,8 +937,8 @@ Once you have completed this section you will be able to:
 
 ## Lecture
 
-Specification Bias I [ [html](https://ds4ps.org/cpp-523-spr-2020/lectures/specification-bias.html) ]  
-Specification Bias II [ [pdf](https://github.com/DS4PS/cpp-523-spr-2020/raw/main/lectures/p-09-specification.pdf) ]  
+Specification Bias I [ [html](../lectures/specification-bias.html) ]  
+Specification Bias II [ [pdf]({{page.pdf-root-url}}/raw/main/lectures/p-09-specification.pdf) ]  
 
 For this lab you will run and interpret a quadratic regression and a logged regression model. 
 

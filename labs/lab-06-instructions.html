@@ -362,23 +362,30 @@ summary {
 ## Residual standard error: 5.806 on 1997 degrees of freedom
 ## Multiple R-squared:  0.8829, Adjusted R-squared:  0.8828 
 ## F-statistic:  7529 on 2 and 1997 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Note the consistency of coefficient:</p>
+<ul>
+<li>Original: <strong>0.0007361023</strong><br />
+</li>
+<li>Rescaled: <strong>7.361023</strong></li>
+</ul>
 <p>The only change to the slope is it will be 10,000 times larger to offset the incomes that are 10,000 times smaller, thus not changing the interpretation of impact. Standard errors are also scaled by the same amount so that confidence intervals would also stay the same. So the only different is the definition of “one-unit change” in each model.</p>
 <p>In the first case one-unit is one dollar, in the second one-unit is $10k.</p>
 </div>
 <div id="q2.-how-much-happiness-do-you-gain-making-an-extra-10k-when-your-initial-income-is-15k" class="section level4">
 <h4>Q2. How much happiness do you gain making an extra $10k when your initial income is $15k?</h4>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>b0 &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>b1 &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>b2 &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>happy<span class="fl">.15</span>k &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>b1<span class="op">*</span>x <span class="op">+</span><span class="st"> </span>b2<span class="op">*</span>x<span class="op">*</span>x</span>
-<span id="cb8-7"><a href="#cb8-7"></a></span>
-<span id="cb8-8"><a href="#cb8-8"></a>x &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a>happy<span class="fl">.25</span>k &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>b1<span class="op">*</span>x <span class="op">+</span><span class="st"> </span>b2<span class="op">*</span>x<span class="op">*</span>x</span>
-<span id="cb8-10"><a href="#cb8-10"></a></span>
-<span id="cb8-11"><a href="#cb8-11"></a>happy<span class="fl">.25</span>k <span class="op">-</span><span class="st"> </span>happy<span class="fl">.15</span>k  <span class="co"># marginal effect of $10k increase at $15k starting salary</span></span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># replace with model coefficients </span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>b0 &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>b1 &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>b2 &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a>x &lt;-<span class="st"> </span><span class="dv">15</span>  <span class="co"># use 15000 if you did not rescale above</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>happy<span class="fl">.15</span>k &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>b1<span class="op">*</span>x <span class="op">+</span><span class="st"> </span>b2<span class="op">*</span>x<span class="op">*</span>x</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a>x &lt;-<span class="st"> </span><span class="dv">25</span>  <span class="co"># use 25000 if you did not rescale above</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>happy<span class="fl">.25</span>k &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>b1<span class="op">*</span>x <span class="op">+</span><span class="st"> </span>b2<span class="op">*</span>x<span class="op">*</span>x</span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-12"><a href="#cb8-12"></a>happy<span class="fl">.25</span>k <span class="op">-</span><span class="st"> </span>happy<span class="fl">.15</span>k  <span class="co"># marginal effect of $10k increase at $15k starting salary</span></span></code></pre></div>
+<pre><code>## [1] 410</code></pre>
 </div>
 <div id="q3.-how-much-happiness-do-you-gain-making-an-extra-10k-when-your-initial-income-is-75k" class="section level4">
 <h4>Q3. How much happiness do you gain making an extra $10k when your initial income is $75k?</h4>
